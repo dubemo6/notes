@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --brand-color: #8b90ff;
+  --base-color: #f2f4f8;
+  --surface-color: #fff;
+  --text-color: #191b23;
+  --secondary-text-color: #3c404f;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  margin: 2rem;
+  background: black;
+  color: black;
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.note-writing-area {
+  background: black;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px rgba(176, 16, 101, 1);
+}
+
+.dialog-actions {
+  text-align: center;
+}
+
+.save-btn,
+.saved-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 25px rgba(176, 16, 101, 1);
+}
+
+.save-btn {
+  background: #b01065;
+  color: white;
+}
+
+.save-btn:hover {
+  background: black;
+  color: white;
+}
+
+.saved-btn {
+  background: #b01065;
+  color: white;
+}
+
+.saved-btn:hover {
+  background: black;
+  color: white;
+}
+
+.add-note-area {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: white;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--surface-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  background: var(--base-color);
+  color: var(--text-color);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #b01065;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 400px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
