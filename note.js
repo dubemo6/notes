@@ -21,19 +21,27 @@ if (editId) {
 function saveNote(event) {
   event.preventDefault();
 
+  const trimmedTitle = title.value.trim();
+  const trimmedContent = content.value.trim();
+
+  if (!trimmedTitle && !trimmedContent) {
+    alert("Title and content cannot be empty!");
+    return;
+  }
+
   if (editId) {
     const index = notes.findIndex((note) => note.id === editId);
     if (index !== -1) {
-      notes[index].title = title.value;
-      notes[index].content = content.value;
+      notes[index].title = trimmedTitle;
+      notes[index].content = trimmedContent;
       notes[index].createdAt = new Date().toLocaleString();
       alert("Note updated!");
     }
   } else {
     notes.unshift({
       id: generateId(),
-      title: title.value,
-      content: content.value,
+      title: trimmedTitle,
+      content: trimmedContent,
       createdAt: new Date().toLocaleString(),
     });
     alert("Note saved!");

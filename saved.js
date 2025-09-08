@@ -20,14 +20,17 @@ notes.forEach(function (note) {
 const removeItem = document.querySelectorAll(".delete-btn");
 removeItem.forEach(function (btn) {
   btn.addEventListener("click", function (event) {
-    const noteElement = event.target.closest(".note");
-    const noteId = noteElement.dataset.id;
-    const index = notes.findIndex((note) => note.id === noteId);
+    const confirmation = confirm("Are you sure you want to delete this note?");
+    if (confirmation) {
+      const noteElement = event.target.closest(".note");
+      const noteId = noteElement.dataset.id;
+      const index = notes.findIndex((note) => note.id === noteId);
 
-    if (index !== -1) {
-      notes.splice(index, 1);
-      localStorage.setItem("notes", JSON.stringify(notes));
-      noteElement.remove();
+      if (index !== -1) {
+        notes.splice(index, 1);
+        localStorage.setItem("notes", JSON.stringify(notes));
+        noteElement.remove();
+      }
     }
   });
 });
